@@ -1,0 +1,21 @@
+/* Nunito */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.grid-superior, .grid-inferior {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 500px;
+  padding: 20px;
+}
+
+/* Forzar iframe sin scrolls y ajustado */
+.card-frame {
+  width: 1000px !important;
+  height: 850px !important; /* Ajustá según el alto real de carta.html */
+  border: none !important;
+  overflow: hidden !important;
+}
