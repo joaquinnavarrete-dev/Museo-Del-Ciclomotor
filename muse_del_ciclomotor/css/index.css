@@ -1,0 +1,79 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+}
+
+.pantalla-click {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* Animación para fondo (sin tocar blur) */
+@keyframes fadeInFondo {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animación para elementos nítidos */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+        filter: brightness(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+.contenedor-pantalla {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.fondo {
+    filter: blur(5px); /* El blur se mantiene SIEMPRE */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: fadeInFondo 1.5s ease forwards;
+}
+
+.superpuesta {
+    top: 700px;
+    width: 120%;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 1.5s; /* Aparece después del fondo */
+}
+
+.texto_superpuesto {
+    bottom: 1000px;
+    width: 90%;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 3s; /* Aparece después del logo */
+}
