@@ -7,15 +7,14 @@ body {
 
 .grid-superior, .grid-inferior {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 500px;
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
+  gap: 0; /* o el que necesites */
+  width: 2160px; /* ancho total */
 }
 
-/* Forzar iframe sin scrolls y ajustado */
 .card-frame {
-  width: 1000px !important;
-  height: 850px !important; /* Ajustá según el alto real de carta.html */
+  width: 720px !important; /* 2160px / 3 = 720px */
+  height: 850px !important;
   border: none !important;
   overflow: hidden !important;
 }
