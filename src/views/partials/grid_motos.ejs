@@ -1,0 +1,32 @@
+<div class="grid-superior">
+    <!-- <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe>
+    <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe>
+    <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe> -->
+    <% for(let i=0; i< product.length; i++){ %>
+            <!-- Componente de carta -->
+            <div class="card">
+                <img src="../../img/zanellat.jpg" alt="" class="card-img">
+                <div class="card-text">
+                    <h3><%=product[i].dataValues.modelo%></h3>
+                    <p><%=product[i].dataValues.marca%></p>
+                    <p><%=product[i].dataValues.origen%></p>
+                </div>
+            </div>
+        
+    <% } %>
+</div>
+
+<div class="grid-inferior">
+    <% for(let i=0; i< product.length; i++){ %>
+            <!-- Componente de carta -->
+            <div class="card">
+                <img src="../../img/zanellat.jpg" alt="" class="card-img">
+                <div class="card-text">
+                    <h3><%=product[i].dataValues.modelo%></h3>
+                    <p><%=product[i].dataValues.marca%></p>
+                    <p><%=product[i].dataValues.origen%></p>
+                </div>
+            </div>
+        
+    <% } %>
+</div>
