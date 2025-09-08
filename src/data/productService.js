@@ -14,62 +14,29 @@ const productService = {
     }, */
     getAll: async function (){
         try {
-            // console.log("Estas en el getAll ");
             let products = await db.Moto.findAll({});
-            
             return products;
-            
         } catch (error) {
-            //para q al menos no se rompa la vista
-            //mandar un mensaje de error o vacio
             return [];
         }    
     },
-    search: async  function(req){
-        try {
-            let allUsers = await this.getAll();
-            let searchUsers = req.query.search.toLowerCase();
-            let results = [];
+search: async function(req) {
+  try {
+    //es un filtro por modelo por defecto
+    // si indica el campo a filtrar, son 5 campos diferentes
+    //podria tener un error si no indica el campo
+    let allMotos = await this.getAll();
+    let searchText = req.query.search?.toLowerCase() || "";
+    let campo = req.query.campo || "modelo";
 
-            for ( let i=0; i < allUsers.length;i++){
-               if(allUsers[i].modelo.toLowerCase().includes(searchUsers) ){
-                results.push(allUsers[i])
-              }
-            }
-            return results
-        } catch (error) {
-            console.log(error);
-        }
-      }
+    return allMotos.filter(moto => {
+      let valorCampo = moto[campo]?.toString().toLowerCase();
+      return valorCampo?.includes(searchText);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
 }
 module.exports = productService;
 
-//para ver que regresa cada funcion del Service que voy configurando 
-//$ node src/data/productService.js 
-// la consulta tiene que ser asincrona, ya q las funciones son asincrenas y 
-//con solo "console.log(), decia pendiente y no esperaba la respuesta"
-
-// async function aux(){
-//     try {
-//         let aux = await productService.filter(req);
-//         console.log(aux);
-        
-//     } catch (error) {
-//         console.log(error);
-//     }}
-
-// aux();
-// 
-
-
-//async function aux(){
-//     try {
-//         let aux = await productService.getAll();
-//         console.log(typeof aux);
-//         console.log(aux.modelo);
-        
-//     } catch (error) {
-//         console.log(error);
-//     }}
-
-// aux();
