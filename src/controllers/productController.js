@@ -12,7 +12,7 @@ const productController = {
       let libros = await productService.getAll();
     //   let librosBest = await productService.fiandBest();
     //   let generos = await productService.fiandGenres();
-    // // console.log(libros);
+    // console.log(libros);
     // console.log(libros[0].dataValues);
     // console.log(libros[1].dataValues);
     res.render('products/pagina_busqueda', {product: libros});    
@@ -28,10 +28,23 @@ const productController = {
       // res.render("products/searchProducts", { productResult: busqueda, products: productos })
       res.render('products/pagina_busqueda', {product: busqueda});  
     } catch (error) {
-      // res.render('admin/error');
+      
       console.log("error del serch");
     }
 
+  },
+  getOne: async (req, res) => {
+    try {
+      let id = req.params.id;
+      console.log(id);
+      let aux = await productService.getOne(id);
+      //let aux1 = await productService.getAll();
+      //let comentarios = await productService.allcoments(id);
+      res.render('products/carta', { product: aux});
+      //res.send(comentarios)
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 //     getOne: async (req, res) => {

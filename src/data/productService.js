@@ -9,12 +9,10 @@ const path = require('path');
 
 
 const productService = {
-    /* getAll: function(){
-        return this.products;    
-    }, */
     getAll: async function (){
         try {
             let products = await db.Moto.findAll({});
+            console.log("11111");
             return products;
         } catch (error) {
             return [];
@@ -36,7 +34,27 @@ search: async function(req) {
   } catch (error) {
     console.log(error);
   }
-}
+},
+    getOne: async function (id){
+        try {
+            let products = await this.getAll();
+           
+           product = products.find((elem)=>elem.id_articulo == id);
+console.log(products.id_articulo);
+           if(!product){
+                // si el no se encuantra el "id" en el arreglo, lo entrgamos bacio al obj
+                
+                product = {};
+           }
+            return product;
+            
+        } catch (error) {
+            //para q al menos no se rompa la vista
+            //mandar un mensaje de error
+            console.log(error);
+            return [];
+        }    
+    }
 }
 module.exports = productService;
 

@@ -3,6 +3,7 @@
     <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe>
     <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe> -->
     <% for(let i=0; i< product.length; i++){ %>
+        <a href="../product/detail/<%=product[i].dataValues.id_articulo %>">
             <!-- Componente de carta -->
             <div class="card">
                 <img src="../../img/zanellat.jpg" alt="" class="card-img">
@@ -12,13 +13,14 @@
                     <p><%=product[i].dataValues.origen%></p>
                 </div>
             </div>
-        
+        </a>
     <% } %>
 </div>
 
 <div class="grid-inferior">
     <% for(let i=0; i< product.length; i++){ %>
             <!-- Componente de carta -->
+            <a href="../product/detail/<%=product[i].dataValues.id_articulo %>">
             <div class="card">
                 <img src="../../img/zanellat.jpg" alt="" class="card-img">
                 <div class="card-text">
@@ -27,6 +29,6 @@
                     <p><%=product[i].dataValues.origen%></p>
                 </div>
             </div>
-        
+            </a>
     <% } %>
 </div>

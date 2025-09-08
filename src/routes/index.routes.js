@@ -14,6 +14,6 @@ router.get('/', productController.index );
 // router.use('/admin', adminRoutes );
 
 router.get("/product/search", productController.productSearch);
-
+router.get('/product/detail/:id', productController.getOne);
 
 module.exports = router;
