@@ -27,8 +27,17 @@
     
     <!-- Buscador -->
     <div class="search-box">
-        
-        <input type="text" placeholder="🔍️ Ingresá el código o el nombre del ciclomotor que buscás">
+            <form class="barra-busqueda-header" action="../../../product/search" method="GET"  >
+   
+        <input class="input-header" type="text" placeholder="search" name="search">
+        <div class="button-header">
+            <button class="button-search" type="submit" style="width: 200px; height: 60px;">
+                <i class="fa-solid fa-magnifying-glass">buscar</i>
+            </button>
+        </div>
+   
+    </form>
+        <!-- <input type="text" placeholder="🔍️ Ingresá el código o el nombre del ciclomotor que buscás"> -->
     </div>
 
     <h3>¡Acá tenés modelos que podrían gustarte!</h2>

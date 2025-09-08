@@ -25,7 +25,22 @@ const productService = {
             return [];
         }    
     },
+    search: async  function(req){
+        try {
+            let allUsers = await this.getAll();
+            let searchUsers = req.query.search.toLowerCase();
+            let results = [];
 
+            for ( let i=0; i < allUsers.length;i++){
+               if(allUsers[i].modelo.toLowerCase().includes(searchUsers) ){
+                results.push(allUsers[i])
+              }
+            }
+            return results
+        } catch (error) {
+            console.log(error);
+        }
+      }
 }
 module.exports = productService;
 

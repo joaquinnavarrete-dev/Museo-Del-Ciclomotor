@@ -20,6 +20,19 @@ const productController = {
       console.log(error);
     }
   },
+  productSearch: async (req, res) => {
+    try {
+      let busqueda = await productService.search(req);
+      let productos = await productService.getAll();
+      //console.log(busqueda);
+      // res.render("products/searchProducts", { productResult: busqueda, products: productos })
+      res.render('products/pagina_busqueda', {product: busqueda});  
+    } catch (error) {
+      // res.render('admin/error');
+      console.log("error del serch");
+    }
+
+  }
 
 //     getOne: async (req, res) => {
 //     try {

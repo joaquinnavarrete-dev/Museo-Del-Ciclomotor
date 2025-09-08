@@ -10,8 +10,10 @@ const productController = require ('../controllers/productController');
 router.get('/', productController.index );
 
 //router.use('/product', productRoutes );//para hacer el ABM adelante
-// router.use('/user', usersRoutes );
+
 // router.use('/admin', adminRoutes );
-// router.use('/api',apiRoutes)
+
+router.get("/product/search", productController.productSearch);
+
 
 module.exports = router;
