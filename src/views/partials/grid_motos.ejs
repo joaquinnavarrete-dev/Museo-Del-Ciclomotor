@@ -2,18 +2,19 @@
 
 
 <div class="grid-superior">
-    <!-- <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe>
-    <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe>
-    <iframe class="card-frame" src="carta.html" scrolling="no" title="carta"></iframe> -->
-    <% for(let i=0; i< product.length; i++){ %>
-        <a href="../product/detail/<%=product[i].dataValues.id_articulo %>">
-            <!-- Componente de carta -->
+    <% for(let i = 0; i < product.length; i++) { %>
+        <a href="/modelo/<%= product[i].dataValues.id_articulo %>">
             <div class="card">
-                <img src="../../img/zanellat.jpg" alt="" class="card-img">
+                <!-- Imagen -->
+                <img src="/img/zanellat.jpg" 
+                     alt="<%= product[i].dataValues.modelo %>" 
+                     class="card-img">
+                
+                <!-- Texto de la tarjeta -->
                 <div class="card-text">
-                    <h3><%=product[i].dataValues.modelo%></h3>
-                    <p><%=product[i].dataValues.marca%></p>
-                    <p><%=product[i].dataValues.origen%></p>
+                    <h3><%= product[i].dataValues.modelo %></h3>
+                    <p><%= product[i].dataValues.marca %></p>
+                    <p><%= product[i].dataValues.origen %></p>
                 </div>
             </div>
         </a>

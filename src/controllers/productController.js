@@ -1,67 +1,60 @@
 const path = require('path');
 const productService = require('../data/productService');
 const fs = require('fs');
-const { log } = require('console');
-
 
 const productController = {
-//vista inicial
+  // Vista inicial o página de búsqueda: trae todos los productos
   index: async (req, res) => {
     try {
-        console.log("estoy en vista principal");
-      let libros = await productService.getAll();
-      console.log(libros);
-    //   let librosBest = await productService.fiandBest();
-    //   let generos = await productService.fiandGenres();
-    // console.log(libros);
-    // console.log(libros[0].dataValues);
-    // console.log(libros[1].dataValues);
-    res.render('products/pagina_busqueda', {product: libros});    
+      console.log("Estoy en vista principal / página de búsqueda");
+      let motos = await productService.getAll(); // Trae todos los productos
+      res.render('products/pagina_busqueda', { product: motos });
     } catch (error) {
-      console.log("estoy en vista yguyguy");
-      console.log(error);
+      console.error(error);
+      res.status(500).send("Error al cargar los productos");
     }
   },
+
+  // Búsqueda filtrada por término y campo
   productSearch: async (req, res) => {
     try {
-      let busqueda = await productService.search(req);
-      let productos = await productService.getAll();
-      //console.log(busqueda);
-      // res.render("products/searchProducts", { productResult: busqueda, products: productos })
-      res.render('products/pagina_busqueda', {product: busqueda});  
-    } catch (error) {
-      
-      console.log("error del serch");
-    }
+      const termino = req.query.search ? req.query.search.toLowerCase() : '';
+      const campo = req.query.campo || 'modelo'; // Por defecto filtra por modelo
 
+      // Traer todos los productos
+      let allProducts = await productService.getAll();
+
+      // Filtrar productos según término y campo
+      let busqueda = allProducts.filter(p => {
+        if (!p.dataValues[campo]) return false; // Evita errores si no existe el campo
+        return p.dataValues[campo].toLowerCase().includes(termino);
+      });
+
+      res.render('products/pagina_busqueda', { product: busqueda });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error al realizar la búsqueda");
+    }
   },
+
+  // Obtener un solo producto y mostrarlo en modelo.ejs
   getOne: async (req, res) => {
     try {
       let id = req.params.id;
-      console.log(id);
-      let aux = await productService.getOne(id);
-      //let aux1 = await productService.getAll();
-      //let comentarios = await productService.allcoments(id);
-      res.render('products/carta', { product: aux});
-      //res.send(comentarios)
+      console.log("ID recibido:", id);
+
+      let moto = await productService.getOne(id);
+
+      if (!moto) {
+        return res.status(404).send("Moto no encontrada");
+      }
+
+      res.render('products/modelo', { moto });
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      res.status(500).send("Error al obtener la moto");
     }
   }
+};
 
-//     getOne: async (req, res) => {
-//     try {
-//       let id = req.params.id;
-//       let aux = await productService.getOne(id);
-//       let aux1 = await productService.getAll();
-//       let comentarios = await productService.allcoments(id);
-//       res.render('products/productDetail', { producto: aux, product: aux1, comentarios: comentarios });
-//       //res.send(comentarios)
-//     } catch (error) {
-//       res.render('admin/error');
-//     }
-//   }
-
-
-}
-module.exports = productController
+module.exports = productController;

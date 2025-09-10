@@ -3,10 +3,16 @@
 
 body {
   font-family: "Nunito", sans-serif;
+
+}
+
+.card a, .card a * {
+    text-decoration: none; /* Quita subrayado de cualquier texto dentro de <a> */
+    color: inherit;        /* Mantiene el color de la carta */
 }
 
 .grid-superior{
-  
+    
   display: grid;
   grid-template-columns: repeat(3, 3fr); /* 3 cartas por fila */
   gap: 20px; /* espacio entre cartas */
@@ -14,7 +20,7 @@ body {
 }
 
 .card {
-  
+ 
   width: 614px !important;
   height: 780px !important;
   border: none !important;

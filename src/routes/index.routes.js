@@ -1,19 +1,19 @@
-const express = require ('express');
+const express = require('express');
 const router = express.Router();
-const productController = require ('../controllers/productController');
-// const productRoutes = require ('./product.routes');
-// const usersRoutes = require ('./users.routes');
-// const adminRoutes = require ('./admin.routes');
-// const apiRoutes = require('./api.routes')
+const productController = require('../controllers/productController');
 
+// Página inicial: muestra el “Toca para iniciar”
+router.get('/', (req, res) => {
+    res.render('products/index'); // index.ejs con la pantalla inicial
+});
 
-router.get('/', productController.index );
+// Página de búsqueda: muestra el grid de motos
+router.get('/pagina_busqueda', productController.index);
 
-//router.use('/product', productRoutes );//para hacer el ABM adelante
+// Página de búsqueda filtrada
+router.get('/product/search', productController.productSearch);
 
-// router.use('/admin', adminRoutes );
-
-router.get("/product/search", productController.productSearch);
-router.get('/product/detail/:id', productController.getOne);
+// Vista detalle de moto
+router.get('/modelo/:id', productController.getOne);
 
 module.exports = router;

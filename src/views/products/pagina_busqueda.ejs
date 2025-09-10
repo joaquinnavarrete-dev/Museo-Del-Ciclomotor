@@ -3,19 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <link rel="stylesheet" href="../../../public/css/pagina_busqueda.css"> -->
-<!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet"> -->
-<!-- <link rel="stylesheet" href="../../../public/css/pagina_busqueda.css"> -->
-<link rel="stylesheet" href="/css/pagina_busqueda.css">
-    <!-- estilo del grid -->
-    <link rel="stylesheet" href="../../../public/css/carta.css">
-    <!-- los estilos de solamente las cartas -->
-    <link rel="stylesheet" href="/css/carta.css">
-    <link rel="stylesheet" href="/css/grid_motos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-<title>Museo del Ciclomotor</title>
 
+<!-- CSS principal -->
+<link rel="stylesheet" href="/css/pagina_busqueda.css">
+
+<!-- Estilos de cartas y grid -->
+<link rel="stylesheet" href="/css/carta.css">
+<link rel="stylesheet" href="/css/grid_motos.css">
+
+<!-- Fuente -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+<title>Museo del Ciclomotor</title>
+</head>
 <body>
+
 <!-- Navbar -->
 <div class="navbar" id="navbar">
     <img src="/img/logotipo Museo Ciclomotor rojo.png" alt="Museo del Ciclomotor">
@@ -28,11 +30,9 @@
     
     <!-- Buscador -->
     <div class="search-box">
-        <form class="barra-busqueda-header" action="../../../product/search" method="GET">
-            <!-- Campo de texto -->
+        <form class="barra-busqueda-header" action="/product/search" method="GET">
             <input class="input-header" type="text" placeholder="Buscar..." name="search">
 
-            <!-- Select para elegir criterio -->
             <select name="campo" class="select-header">
                 <option value="modelo">Modelo</option>
                 <option value="origen">Origen</option>
@@ -40,22 +40,23 @@
                 <option value="rodado">Rodado</option>
             </select>
 
-            <!-- Botón de búsqueda -->
             <div class="button-header">
                 <button class="button-search" type="submit" style="width: 200px; height: 60px;">
                     <i class="fa-solid fa-magnifying-glass"></i> Buscar
                 </button>
             </div>
         </form>
-        <!-- <input type="text" placeholder="🔍️ Ingresá el código o el nombre del ciclomotor que buscás"> -->
     </div>
 
-    <h3>¡Acá tenés modelos que podrían gustarte!</h2>
+    <h3>¡Acá tenés modelos que podrían gustarte!</h3>
 
     <!-- Lista de modelos -->
     <div class="models">
-        <!-- <iframe src="../html/componentesHTML/grid_motos.html"  scrolling="no" title="grid"></iframe> -->
-          <%- include ('../partials/grid_motos.ejs') %>
+        <% if(typeof product !== 'undefined' && product.length > 0) { %>
+            <%- include('../partials/grid_motos.ejs') %>
+        <% } else { %>
+            <p>Aún no hay modelos cargados.</p>
+        <% } %>
     </div>
 </div>
 

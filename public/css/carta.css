@@ -2,7 +2,9 @@
      font-family: Nunito, sans-serif;
 }
 
+
 .card {
+   
     width: 614px;
     height: 780px;
     border-radius: 72px;
@@ -27,15 +29,19 @@
 }
 
 .card-text {
+    
     color: white;
     text-align: left;
     width: 100%;
     padding: 15px 20px;
+   
+    
 }
 
 .card-text h3 {
     margin: 10px 0;
     font-size: 60px;
+   
 }
 
 .card-text p {
