@@ -95,10 +95,28 @@ h3 {
     margin: 20px 0;
 }
 
+.search-box select{
+    width: 30%;
+    padding: 20px 20px;
+    border-radius: 160px;
+    border: none;
+    font-size: 40px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 
+.search-box select option {
+    font-size: 10px; /* tamaño normal en la lista desplegable */
+    color:#d81919;
+    
+}
+
+
+.barra-busqueda-header{
+    width: 90%;
+}
 .search-box input {
-    width: 80%;
-    max-width: 80%;
+    width: 100%;
     padding: 100px 100px;
     border-radius: 160px;
     border: none;
@@ -107,21 +125,6 @@ h3 {
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+
+
 /* Lista de ciclomotores */
-.models {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
-    align-items: start; /* evita que se estire raro */
-}
-
-.models iframe,
-.models object {
-    width: 3000px !important;
-    height: 3000px !important; /* Ajustá según el alto de tu carta */
-    border: none !important;
-    overflow: hidden !important;
-    display: block !important;
-}
-

@@ -5,16 +5,26 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-.grid-superior, .grid-inferior {
+.grid-superior{
+  
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
-  gap: 0; /* o el que necesites */
-  width: 2160px; /* ancho total */
+  grid-template-columns: repeat(3, 3fr); /* 3 cartas por fila */
+  gap: 20px; /* espacio entre cartas */
+  justify-items: center; /* centra cada carta */
 }
 
-.card-frame {
-  width: 720px !important; /* 2160px / 3 = 720px */
-  height: 850px !important;
+.card {
+  
+  width: 614px !important;
+  height: 780px !important;
   border: none !important;
   overflow: hidden !important;
+} 
+
+.card img{
+  object-fit: cover;
+  margin-top: 15px;
+  width: 540px;
+  height: 540px;
+  
 }

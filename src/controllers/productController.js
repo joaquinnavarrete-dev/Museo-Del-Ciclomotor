@@ -8,8 +8,9 @@ const productController = {
 //vista inicial
   index: async (req, res) => {
     try {
-        // console.log("estoy en vista principal");
+        console.log("estoy en vista principal");
       let libros = await productService.getAll();
+      console.log(libros);
     //   let librosBest = await productService.fiandBest();
     //   let generos = await productService.fiandGenres();
     // console.log(libros);
@@ -17,6 +18,7 @@ const productController = {
     // console.log(libros[1].dataValues);
     res.render('products/pagina_busqueda', {product: libros});    
     } catch (error) {
+      console.log("estoy en vista yguyguy");
       console.log(error);
     }
   },

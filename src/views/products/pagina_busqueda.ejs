@@ -8,16 +8,17 @@
 <!-- <link rel="stylesheet" href="../../../public/css/pagina_busqueda.css"> -->
 <link rel="stylesheet" href="/css/pagina_busqueda.css">
     <!-- estilo del grid -->
-    <link rel="stylesheet" href="/css/grid_motos.css">
+    <link rel="stylesheet" href="../../../public/css/carta.css">
     <!-- los estilos de solamente las cartas -->
     <link rel="stylesheet" href="/css/carta.css">
+    <link rel="stylesheet" href="/css/grid_motos.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <title>Museo del Ciclomotor</title>
 
 <body>
 <!-- Navbar -->
 <div class="navbar" id="navbar">
-    <!-- <img src="/img/logotipo Museo Ciclomotor rojo.png" alt="Museo del Ciclomotor"> -->
+    <img src="/img/logotipo Museo Ciclomotor rojo.png" alt="Museo del Ciclomotor">
 </div>
 
 <!-- Contenido -->
@@ -27,25 +28,25 @@
     
     <!-- Buscador -->
     <div class="search-box">
- <form class="barra-busqueda-header" action="../../../product/search" method="GET">
-    <!-- Campo de texto -->
-    <input class="input-header" type="text" placeholder="Buscar..." name="search">
+        <form class="barra-busqueda-header" action="../../../product/search" method="GET">
+            <!-- Campo de texto -->
+            <input class="input-header" type="text" placeholder="Buscar..." name="search">
 
-    <!-- Select para elegir criterio -->
-    <select name="campo" class="select-header">
-        <option value="modelo">Modelo</option>
-        <option value="origen">Origen</option>
-        <option value="marca">Marca</option>
-        <option value="rodado">Rodado</option>
-    </select>
+            <!-- Select para elegir criterio -->
+            <select name="campo" class="select-header">
+                <option value="modelo">Modelo</option>
+                <option value="origen">Origen</option>
+                <option value="marca">Marca</option>
+                <option value="rodado">Rodado</option>
+            </select>
 
-    <!-- Botón de búsqueda -->
-    <div class="button-header">
-        <button class="button-search" type="submit" style="width: 200px; height: 60px;">
-            <i class="fa-solid fa-magnifying-glass"></i> Buscar
-        </button>
-    </div>
-</form>
+            <!-- Botón de búsqueda -->
+            <div class="button-header">
+                <button class="button-search" type="submit" style="width: 200px; height: 60px;">
+                    <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                </button>
+            </div>
+        </form>
         <!-- <input type="text" placeholder="🔍️ Ingresá el código o el nombre del ciclomotor que buscás"> -->
     </div>
 
