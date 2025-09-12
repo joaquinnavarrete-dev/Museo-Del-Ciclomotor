@@ -6,7 +6,7 @@ body {
 
 }
 
-.card a, .card a * {
+.models {
     text-decoration: none; /* Quita subrayado de cualquier texto dentro de <a> */
     color: inherit;        /* Mantiene el color de la carta */
 }
@@ -34,3 +34,4 @@ body {
   height: 540px;
   
 }
+

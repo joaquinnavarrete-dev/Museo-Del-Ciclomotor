@@ -33,6 +33,22 @@ body::before {
     z-index: -1; /* Lo manda al fondo */
 }
 
+.button-header{
+    padding: 50px;
+}
+
+.button-search {
+   width: 50%;
+   height: 200px;
+   background-color: #d81919; /* tu color */
+   border-radius: 100px;
+   border: 10px solid white; /* grosor visible del borde */
+   font-size: 62px;
+   font-weight: 700; /* letras más gruesas */
+   color: white; /* letras blancas */
+   cursor: pointer; /* mano al pasar */
+}
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -72,7 +88,7 @@ h1 {
    font-size: 160px;
    height: 100%;
    width: auto;
-    margin-top: 40%;
+   margin-top: 40%;
 }
 
 h2 {
@@ -82,49 +98,69 @@ h2 {
 }
 
 h3 {
-    margin-top: 10%;
+
     color: #ffffff;
     font-size: 90px;
+}
+
+.barra-busqueda-header{
+    width: 100%;
+    height: 500px;
+
+}
+
+input.input-header{
+    height: 200px;
+}
+select.select-header{
+    height: 200px;
 }
 
 
 /* Buscador */
 .search-box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    gap: 20px; /* espacio entre input y select */
+    margin: 40px 0;
+    flex-wrap: wrap; /* en pantallas chicas se apila */
 }
 
-.search-box select{
-    width: 30%;
-    padding: 20px 20px;
-    border-radius: 160px;
+.search-box select,
+.search-box input {
+    padding: 20px;
+    border-radius: 100px;
     border: none;
-    font-size: 40px;
+    font-size: 62px;
     outline: none;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.search-box input{
+    text-align: center;
+}
+
+
+
+.search-box input {
+    width: 70%;
+    min-width: 280px;
+}
+
+.search-box select {
+    width: 25%;
+    min-width: 180px;
 }
 
 .search-box select option {
-    font-size: 10px; /* tamaño normal en la lista desplegable */
+    font-size: 16px; 
     color:#d81919;
-    
 }
 
-
-.barra-busqueda-header{
-    width: 90%;
+/* Quitar subrayado de enlaces dentro de .card-text */
+.models {
+    text-decoration: none;
+    color: inherit;
 }
-.search-box input {
-    width: 100%;
-    padding: 100px 100px;
-    border-radius: 160px;
-    border: none;
-    font-size: 55px;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-
-
-/* Lista de ciclomotores */

@@ -1,10 +1,12 @@
-*{
-     font-family: Nunito, sans-serif;
+* {
+    font-family: Nunito, sans-serif;
 }
 
+.card-text u {
+    text-decoration: none !important;
+}
 
 .card {
-   
     width: 614px;
     height: 780px;
     border-radius: 72px;
@@ -13,35 +15,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
     padding: 20px;
 }
 
 .card-img {
-   
     width: 614px;
     height: 539px;
     border-radius: 72px;
     background: #fff;
-    padding: 0px;
     object-fit: cover;
 }
 
 .card-text {
-    
     color: white;
     text-align: left;
     width: 100%;
     padding: 15px 20px;
-   
-    
+}
+
+/* Forzar que nada dentro de card-text tenga subrayado */
+.card-text * {
+    text-decoration: none !important;
 }
 
 .card-text h3 {
     margin: 10px 0;
     font-size: 60px;
-   
 }
 
 .card-text p {
