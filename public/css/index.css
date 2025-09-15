@@ -1,10 +1,12 @@
+@import url('paleta_colores.css');
+
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: black;
+    background: var(--COLOR-FONDO-NEGRO);
 }
 
 .pantalla-click {
@@ -51,21 +53,38 @@ html, body {
 }
 
 .fondo {
-    filter: blur(5px); /* El blur se mantiene SIEMPRE */
+    /* Blur mucho más pronunciado */
+    filter: blur(20px);
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    animation: fadeInFondo 1.5s ease forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Asegura que esté por debajo del overlay de color */
+}
+
+/* Overlay de color rojo semitransparente para el efecto de color en el blur */
+.overlay-rojo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(216, 25, 25, 0.6);
+    z-index: 5; /* Por encima del fondo, pero debajo de los elementos principales */
     animation: fadeInFondo 1.5s ease forwards;
 }
 
 .superpuesta {
-    top: 700px;
+    top: 300px;
     width: 120%;
     position: absolute;
     z-index: 10;
     opacity: 0;
     animation: fadeIn 1.5s ease forwards;
-    animation-delay: 1.5s; /* Aparece después del fondo */
+    animation-delay: 1.5s;
 }
 
 .texto_superpuesto {
@@ -75,5 +94,5 @@ html, body {
     z-index: 10;
     opacity: 0;
     animation: fadeIn 1.5s ease forwards;
-    animation-delay: 3s; /* Aparece después del logo */
+    animation-delay: 3s;
 }

@@ -1,22 +1,37 @@
+@import url('paleta_colores.css');
+
 * {
+    font-family: Nunito, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
-    font-family: Nunito, sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+        filter: brightness(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+    }
 }
 
 body {
     margin: 0;
     padding: 0;
-    color: white;
+    color: var(--COLOR-TEXTO-BLANCO);
     text-align: center;
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
+    animation: fadeIn 1s ease forwards;
 }
 
-/* Fondo con imagen + gradiente */
 body::before {
     content: "";
     position: fixed;
@@ -25,77 +40,64 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(to bottom, #ffffffb7, #d81919e0),
+        linear-gradient(to bottom, var(--COLOR-FONDO-BLANCO-TRASP), var(--COLOR-FONDO-ROJO-GRADIENTE)),
         url("../img/ciclomotor.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1; /* Lo manda al fondo */
+    z-index: -1;
+    animation: fadeIn 1s ease forwards;
 }
 
-.ficha-museo img{
+.ficha-museo img {
     border-radius: 7%;
     width: 1960px;
     height: 1730px;
-
-    background: #fff;
+    background: var(--COLOR-TEXTO-BLANCO);
     padding: 0px;
     object-fit: cover;
+    animation: fadeIn 1s ease forwards;
 }
 
 .botones { 
     display: flex;
-    justify-content: center; /* centra los botones horizontalmente */
-    align-items: center;     /* centra verticalmente dentro del contenedor */
-    gap: 200px;               /* espacio entre botones */
+    justify-content: center; 
+    align-items: center;     
+    gap: 200px;              
     height: 400px;
+    animation: fadeIn 1s ease forwards;
 }
 
-/* Botones grandes con gradiente centrado */
 .boton-atras, .boton-catalogo {
-    display: flex;               /* Para centrar texto */
-    justify-content: center;     /* Centrar horizontal */
-    align-items: center;         /* Centrar vertical */
-    
+    display: flex;               
+    justify-content: center;     
+    align-items: center;         
     font-size: 90px;
     width: 550px;
     height: 241px;
     padding: 0;                  
     border-radius: 90px;
-
-    background: linear-gradient(to bottom, rgb(255, 255, 255), #d40400); 
-    color: white;
+    background: var(--COLOR-BOTON-FONDO); 
+    color: var(--COLOR-TEXTO-BLANCO);
     border: none;
     cursor: pointer;
     font-weight: bold;
     text-align: center;
+    animation: fadeIn 1s ease forwards;
 }
 
 .boton-catalogo {
-    display: flex;               /* Para centrar texto */
-    justify-content: center;     /* Centrar horizontal */
-    align-items: center;         /* Centrar vertical */
-    
-    font-size: 90px;
     width: 1200px;
-    height: 241px;
-    padding: 0;                  
-    border-radius: 90px;
-
-    background: linear-gradient(to bottom, rgb(255, 255, 255), #d40400); 
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
 }
 
-
-.ficha-museo h1{
+.ficha-museo h1 {
     font-size: 100px;
+    animation: fadeIn 1s ease forwards;
 }
-.detalles{
+
+.detalles {
     font-size: 80px;
     text-align: left;
     margin-left: 200px;
+    animation: fadeIn 1s ease forwards;
 }

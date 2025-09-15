@@ -1,37 +1,36 @@
-/* Nunito */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap");
+@import url('paleta_colores.css');
 
 body {
   font-family: "Nunito", sans-serif;
-
+  animation: fadeIn 1s ease forwards;
 }
 
 .models {
-    text-decoration: none; /* Quita subrayado de cualquier texto dentro de <a> */
-    color: inherit;        /* Mantiene el color de la carta */
+  text-decoration: none; 
+  color: inherit;        
+  animation: fadeIn 1s ease forwards;
 }
 
-.grid-superior{
-    
+.grid-superior {
   display: grid;
-  grid-template-columns: repeat(3, 3fr); /* 3 cartas por fila */
-  gap: 20px; /* espacio entre cartas */
-  justify-items: center; /* centra cada carta */
+  grid-template-columns: repeat(3, 3fr); 
+  gap: 20px; 
+  justify-items: center;
+  animation: fadeIn 1s ease forwards;
 }
 
 .card {
- 
   width: 614px !important;
   height: 780px !important;
   border: none !important;
   overflow: hidden !important;
-} 
+  animation: fadeIn 1s ease forwards;
+}
 
-.card img{
+.card img {
   object-fit: cover;
   margin-top: 15px;
   width: 540px;
   height: 540px;
-  
+  animation: fadeIn 1s ease forwards;
 }
-
