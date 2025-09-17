@@ -43,13 +43,15 @@
     opacity: 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: 0.8s;
+    text-decoration: none;
 }
 
-.card-text * {
+a {
     text-decoration: none !important;
 }
 
 .card-text h3 {
+    text-decoration: none;
     margin: 10px 0;
     font-size: 60px;
     opacity: 0;

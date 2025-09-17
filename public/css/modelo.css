@@ -101,3 +101,7 @@ body::before {
     margin-left: 200px;
     animation: fadeIn 1s ease forwards;
 }
+
+a {
+text-decoration: none;
+}
