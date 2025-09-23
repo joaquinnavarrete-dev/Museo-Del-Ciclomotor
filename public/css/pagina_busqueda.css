@@ -59,6 +59,7 @@ body::before {
 }
 
 .navbar {
+    margin-top: 0px;
     position: fixed;
     width: 100%;
     display: flex;
@@ -72,6 +73,7 @@ body::before {
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
     animation-delay: 0.1s;
+   
 }
 
 .navbar::before {
@@ -86,7 +88,6 @@ body::before {
 }
 
 .navbar img {
-    margin-top: 8%;
     position: relative;
     z-index: 1;
     height: 100%;
@@ -94,13 +95,14 @@ body::before {
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
     animation-delay: 0.25s;
+    
 }
 
 h1 {
    font-size: 160px;
    height: 100%;
    width: auto;
-   margin-top: 40%;
+   margin-top: 45%;
    opacity: 0;
    animation: fadeIn 0.5s ease forwards;
    animation-delay: 0.4s;

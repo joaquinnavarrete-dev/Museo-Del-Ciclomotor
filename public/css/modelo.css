@@ -86,9 +86,12 @@ body::before {
     animation: fadeIn 1s ease forwards;
 }
 
-.boton-catalogo {
-    width: 1200px;
+.boton-catalogo  {
+    width: 1300px;
+    font-size: 75px;
 }
+
+
 
 .ficha-museo h1 {
     font-size: 100px;
@@ -104,4 +107,6 @@ body::before {
 
 a {
 text-decoration: none;
+font-size: 50px;
+
 }

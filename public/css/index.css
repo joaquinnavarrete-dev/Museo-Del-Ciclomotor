@@ -81,8 +81,8 @@ html, body {
 }
 
 .superpuesta {
-    top: 600px;
-    width: 100%;
+    top: 300px;
+    width: 110%;
     position: absolute;
     z-index: 10;
     opacity: 0;

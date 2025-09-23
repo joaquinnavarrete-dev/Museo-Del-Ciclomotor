@@ -16,4 +16,9 @@ router.get('/product/search', productController.productSearch);
 // Vista detalle de moto
 router.get('/modelo/:id', productController.getOne);
 
+// Página de historia
+router.get('/pagina_historia', (req, res) => {
+    res.render('products/pagina_historia'); 
+});
+
 module.exports = router;
